@@ -1,0 +1,65 @@
+/* 设置从阿里拿来的图标的右外边距 */
+/* 给body设置x方向超出部分隐藏 */
+body{
+  overflow-x: hidden;
+}
+
+.iconfont {
+    margin-right: 8px;
+  }
+  /* 设置layui的图标右间距，同时为显示出层级，左边距也设置了，看上去有缩进的效果 */
+.layui-icon {
+    margin-right: 8px;
+    margin-left: 20px;
+  }
+
+  .user-info{
+    height:60px;
+    line-height: 60px;
+    text-align: center;
+  }
+
+  .layui-nav-img{
+    height:40px;
+    width:40px;
+  }
+
+  .user-avatar{
+    display:inline-block;
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+    background-color: #009688;
+    /* 注意文字的垂直方向默认是根据基线对齐，此时若设置行高，文字位置不会变，变的是包裹这个文字的区域范围 */
+    line-height:40px;
+    margin-right: 10px;
+    position:relative;
+    top:2px;
+    font-size: 20px;
+  }
+
+  .layui-nav-item .user-avatar,.layui-nav-img{
+    text-align: center;
+  }
+
+  .welcome{
+    display:inline-block;
+    font-size: 12px;
+    position:relative;
+    top:4px;
+    /* 阻止用户选择文字 */
+    user-select:none;
+  }
+
+  /* iframe默认不会撑满父元素 */
+  .contain{
+    width:100%;
+    height:100%;
+  }
+
+  iframe{
+    width:100%;
+    height:100%;
+  }
+
+  

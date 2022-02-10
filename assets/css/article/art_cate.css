@@ -1,0 +1,25 @@
+html,body{
+    margin:0;
+    padding:0;
+    background-color: #f2f3f5;
+}
+
+body{
+    padding:15px;
+}
+
+.layui-card-header{
+    display: flex;
+    /* 水平方向 */
+    justify-content:space-between;
+    /* 上下对齐 */
+    align-items: center;
+}
+
+.layui-form{
+    margin-top:15px;
+}
+
+.layui-form-item{
+    margin-right: 40px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+  <link rel="stylesheet" href="/assets/lib/quill/quill.snow.css">
+  <link rel="stylesheet" href="/assets/lib/cropper/cropper.css" />
+  <link rel="stylesheet" href="/assets/css/article/art_edit.css">
+</head>
+
+<body>
+  <div class="layui-card">
+    <div class="layui-card-header">
+      <i class="layui-icon layui-icon-left" title="后退"></i>
+      <span>修改文章</span>
+    </div>
+    <div class="layui-card-body">
+      <!-- 表单 -->
+      <form class="layui-form article-form" lay-filter="form-edit">
+        <input type="hidden" name="id">
+        <!-- 文章标题 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">文章标题</label>
+          <div class="layui-input-block">
+            <input type="text" name="title" required lay-verify="required|title" placeholder="请输入文章标题"
+              autocomplete="off" class="layui-input">
+          </div>
+        </div>
+        <!-- 文章类别 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">文章类别</label>
+          <div class="layui-input-block">
+            <select name="cate_id" lay-verify="required"></select>
+          </div>
+        </div>
+        <!-- 文章内容 -->
+        <div class="layui-form-item">
+          <label class="layui-form-label">文章内容</label>
+          <div class="layui-input-block my-editor">
+            <div id="editor"></div>
+          </div>
+        </div>
+        <!-- 文章封面 -->
+        <div class="layui-form-item">
+          <!-- 左侧的 label -->
+          <label class="layui-form-label">文章封面</label>
+          <!-- 选择封面区域 -->
+          <div class="layui-input-block cover-box">
+            <!-- 左侧裁剪区域 -->
+            <div class="cover-left">
+              <img id="image" src="/assets/images/sample2.jpg" alt="" />
+            </div>
+            <!-- 右侧预览区域和选择封面区域 -->
+            <div class="cover-right">
+              <!-- 预览的区域 -->
+              <div class="img-preview"></div>
+              <!-- 选择封面按钮 -->
+              <input type="file" id="file" style="display: none;" accept="image/*">
+              <button type="button" class="layui-btn layui-btn-danger btn-choose-img">选择封面</button>
+            </div>
+          </div>
+        </div>
+        <!-- 按钮 -->
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+            <button class="layui-btn" lay-submit id="btn-pub">发布</button>
+            <button class="layui-btn layui-btn-primary" lay-submit id="btn-save">存为草稿</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 文章分类可选项的下拉菜单模板 -->
+  <script type="text/html" id="tmpl-cate">
+    <option value="">请选择文章类别</option>
+    {{each data}}
+    <option value="{{$value.id}}">{{$value.cate_name}}</option>
+    {{/each}}
+  </script>
+
+  <script src="/assets/lib/template-web.js"></script>
+  <script src="/assets/lib/layui/layui.all.js"></script>
+  <script src="/assets/lib/jquery.js"></script>
+  <script src="/assets/lib/cropper/Cropper.js"></script>
+  <script src="/assets/lib/cropper/jquery-cropper.js"></script>
+  <script src="/assets/js/baseURL.js"></script>
+  <script src="/assets/lib/quill/quill.js"></script>
+  <script src="/assets/js/article/art_edit.js"></script>
+</body>
+
+</html>
